@@ -12,7 +12,7 @@ const Logo: React.FC<LogoProps> = ({ width = 230, height = 48 }) => {
     <Link href="/" className="flex items-center gap-2">
       {/* Logo image with fixed dimensions */}
       <Image
-        src="/assets/sandtechlogo-01.png"
+        src="/assets/SandTechLogo-01.png"
         alt="Logo"
         width={width}
         height={height}
