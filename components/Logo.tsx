@@ -10,21 +10,24 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ width = 230, height = 48 }) => {
   return (
     <Link href="/" className="flex items-center gap-2">
-      {/* Logo image */}
-      <div style={{ width, height }} className="relative overflow-hidden">
-        <Image
-          src="/assets/sandtechlogo-01.png"
-          alt="Logo"
-          fill
-          className="object-contain"
-        />
-      </div>
+      {/* Logo image with fixed dimensions */}
+      <Image
+        src="/assets/sandtechlogo-01.png"
+        alt="Logo"
+        width={width}
+        height={height}
+        className="object-contain"
+      />
 
       {/* Company name text */}
-      <span className="font-primary font-semibold text-lg text-white">
-        SANDTECH
-      </span>
-      <span>Engineering Company limited</span>
+      <div className="leading-tight">
+        <span className="block font-primary font-semibold text-lg text-white">
+          SANDTECH
+        </span>
+        <span className="block text-xs text-white">
+          Engineering Company Limited
+        </span>
+      </div>
     </Link>
   );
 };
