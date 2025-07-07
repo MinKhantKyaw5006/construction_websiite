@@ -34,10 +34,13 @@ const Home = () => {
       <Stats />
       <Services />
       <Work />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Faq />
       <Contact />
       <Footer />
+
+      {/*tem div*/}
+      {/* <div className='h-[1000px]'></div> */}
     </div>
   );
 };
