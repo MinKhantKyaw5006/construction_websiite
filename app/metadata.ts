@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sandtechth.vercel.app"),
   title: "Sandtech Engineering Company Limited",
   description: "Quality construction services with integrity and professionalism.",
   openGraph: {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "Sandtech Engineering",
     images: [
       {
-        url: "/assets/sandtechtemplate.png",  // path relative to public folder
+        url: "/assets/sandtechtemplate.png",
         width: 1200,
         height: 630,
         alt: "Sandtech Engineering Logo",
@@ -23,6 +24,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sandtech Engineering Company Limited",
     description: "Quality construction services with integrity and professionalism.",
-    images: ["/assets/sandtechtemplate.png"],  // path relative to public folder
+    images: ["/assets/sandtechtemplate.png"],
   },
 };
