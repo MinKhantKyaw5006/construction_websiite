@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Barlow } from "next/font/google";
 import "./globals.css";
-import { Weight } from "lucide-react";
+import { metadata } from "./metadata";  // import external metadata
 
 const dmSans = DM_Sans({
   variable: "--font-dmSans",
@@ -15,10 +15,7 @@ const barlow = Barlow({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-export const metadata: Metadata = {
-  title: "Sandtech Engineering",
-  description: "SandTech Engineering Company Limited",
-};
+export { metadata }; // re-export metadata so Next.js can detect it
 
 export default function RootLayout({
   children,
@@ -27,8 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     <body className={`${dmSans.variable} ${barlow.variable} antialiased`}>
-
+      <body className={`${dmSans.variable} ${barlow.variable} antialiased`}>
         {children}
       </body>
     </html>
