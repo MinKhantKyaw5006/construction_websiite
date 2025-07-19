@@ -15,15 +15,19 @@ const FaqItems: React.FC<FaqItemProps> = ({ title, description }) => {
       <div className="flex items-center justify-between py-6">
         <h4 className="h4 max-w-[300px] sm:max-w-md md:max-w-max">{title}</h4>
         <Button
-          className="w-[44px] h-[44px] bg-accent flex items-center justify-center"
+          className="w-[44px] h-[44px] flex items-center justify-center"
+          style={{
+            backgroundColor: 'var(--accent-color-alt)', // set button bg
+          }}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
-            <RiSubtractFill className="text-primary text-2xl transition-opacity duration-700" />
+            <RiSubtractFill className="text-white text-2xl transition-opacity duration-300" />
           ) : (
-            <RiAddFill className="text-primary text-2xl transition-opacity duration-700" />
+            <RiAddFill className="text-white text-2xl transition-opacity duration-300" />
           )}
         </Button>
+
       </div>
 
       <div
