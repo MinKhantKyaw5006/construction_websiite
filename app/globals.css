@@ -49,9 +49,11 @@
 
   --container-padding: 15px;
   --accent-color: #0bc0f4;
+  --accent-color-alt: #f5355d;
   --border-color: #d7d7d7;
   --shadow-custom: 0px 4px 54px 10px rgba(18, 19, 21, 0.06);
-  --bg-hero: url("/assets/img/hero/bg.jpg");
+  --bg-hero-left: url("/assets/img/hero/sandtechimage3.jpg");
+  --bg-hero-right: url("/assets/img/hero/sandtech_hero.jpg");
 }
 
 :root {
@@ -183,18 +185,65 @@
     background: var(--accent-color);
   }
 
+  .bg-accent-2 {
+    background: var(--accent-color-alt);
+  }
+
   .shadow-custom {
     box-shadow: var(--shadow-custom);
   }
 
   .bg-hero {
-    background-image: var(--bg-hero);
+    background-image: var(--bg-hero-left);
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
   }
 
   .container {
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
+  }
+
+  .flowing-image-container {
+    position: relative;
+    height: 500px; /* adjust to your section height */
+    overflow: hidden;
+    width: 280px; /* set width for the track */
+    border-left: 3px solid var(--accent-color);
+    border-right: 3px solid var(--accent-color);
+    border-radius: 30px;
+  }
+
+  .flowing-image {
+    position: absolute;
+    top: -150%; /* start above container */
+    width: 240px;
+    animation: flowDown 8s linear infinite;
+  }
+
+  @keyframes flowDown {
+    0% {
+      top: -150%;
+      left: 0;
+      transform: translateX(0);
+    }
+    25% {
+      left: 15px;
+      transform: translateX(15px);
+    }
+    50% {
+      left: 30px;
+      transform: translateX(30px);
+    }
+    75% {
+      left: 15px;
+      transform: translateX(15px);
+    }
+    100% {
+      top: 100%;
+      left: 0;
+      transform: translateX(0);
+    }
   }
 }

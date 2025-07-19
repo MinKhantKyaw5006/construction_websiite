@@ -1,61 +1,93 @@
-import React from 'react'
-import { RiPhoneFill, RiMailFill, RiMapPin2Fill } from 'react-icons/ri'
-import Logo from './Logo'
-import CustomButton from './CustomButton'
+'use client';
+
+import React, { useState, ChangeEvent } from 'react';
+import { RiPhoneFill, RiMailFill, RiLineLine } from 'react-icons/ri';
+import Logo from './Logo';
+import CustomButton from './CustomButton';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = () => {
+    if (!email) {
+      setMessage('Please enter your email.');
+      return;
+    }
+
+    // Simulate successful submission
+    setMessage('Thank you for subscribing!');
+    setEmail('');
+  };
+
   return (
     <footer className="mt-16 xl:mt-32 bg-primary py-16 xl:py-[100px]">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-16 xl:gap-[60px]">
-          {/* logo and description */}
-          <div className="flex-1 text-white">
-            <div className="mb-6">
+          {/* Logo and description */}
+          <div className="flex-1 text-white flex flex-col items-center xl:items-start text-center xl:text-left">
+            <div className="mb-6 flex justify-center">
               <Logo height={40} width={40} />
             </div>
-            <p className="leading-relaxed text-border">
-              dummy text dummy textdummy textdummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text
+            <p className="leading-relaxed text-border max-w-[400px]">
+              SandTech Construction is dedicated to delivering quality building services with integrity and professionalism. Your vision, our expertise.
             </p>
           </div>
 
-          {/* contact section */}
-          <div className="flex-1 text-border">
+          {/* Contact section */}
+          <div className="flex-1 text-border flex flex-col items-center xl:items-start text-center xl:text-left">
             <h4 className="h4 text-white mb-8">Contact</h4>
-            <ul className="space-y-6">
-              <li className="flex items-start gap-4">
-                <RiMapPin2Fill className="text-accent text-xl mt-1" />
-                <p>10560 Soi 1, Samut Prakan, Thailand</p>
+            <ul className="space-y-6 max-w-[300px]">
+              {/* Center icons + text on small, left on xl */}
+              <li className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 justify-center xl:justify-start">
+                <RiLineLine className="text-accent text-xl mt-1" />
+                <p>sandtech engineering</p>
               </li>
-              <li className="flex items-start gap-4">
+              <li className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 justify-center xl:justify-start">
                 <RiPhoneFill className="text-accent text-xl mt-1" />
-                <p>+613866227</p>
+                <p>+664390844</p>
               </li>
-              <li className="flex items-start gap-4">
+              <li className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 justify-center xl:justify-start">
                 <RiMailFill className="text-accent text-xl mt-1" />
                 <p>sandtechth@gmail.com</p>
               </li>
             </ul>
           </div>
 
-          {/* newsletter or quick info */}
-          <div className="flex-1 text-border">
+          {/* Newsletter section */}
+          <div className="flex-1 text-border flex flex-col items-center xl:items-start text-center xl:text-left">
             <h4 className="h4 text-white mb-8">Newsletter</h4>
-            <p className="mb-6">
-              Stay updated with our latest news and offers. We promise not to spam!
+            <p className="mb-6 max-w-[400px]">
+              Stay updated with our latest news and offers. Subscribe to our newsletter!
             </p>
-            <form className="flex flex-col sm:flex-row gap-4">
+
+            <div className="flex flex-col sm:flex-row sm:justify-center xl:justify-start gap-4 w-full max-w-[400px]">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-3 w-full rounded-md text-black"
+                className="px-4 py-3 w-full rounded-md text-black bg-gray-100 border border-gray-300 focus:border-accent focus:ring-accent focus:ring-1 outline-none"
+                aria-label="Email address"
+                value={email}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               />
-              <CustomButton text='Enter your Email'/>
-            </form>
+              <div className="flex justify-center sm:justify-start">
+                <CustomButton
+                  text="Subscribe"
+                  onClick={handleSubmit}
+                />
+              </div>
+            </div>
+
+            {message && (
+              <p className="mt-2 text-sm text-white" aria-live="polite">
+                {message}
+              </p>
+            )}
           </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

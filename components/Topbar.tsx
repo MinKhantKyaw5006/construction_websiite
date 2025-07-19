@@ -13,7 +13,7 @@ const Topbar = () => {
                         <div className='w-8 h-8 bg-primary text-white flex items-center justify-center'>
                             <RiPhoneFill/>
                         </div>
-                        <p className='font-medium text-primary'> +613866227</p>
+                        <p className='font-medium text-primary'> +664390844</p>
                     </div>
 
                     {/* mail */}
@@ -21,7 +21,7 @@ const Topbar = () => {
                         <div className='w-8 h-8 bg-primary text-white flex items-center justify-center'>
                             <RiMailFill/>
                         </div>
-                        <p className='font-medium text-primary'> sandtech@gmail.com</p>
+                        <p className='font-medium text-primary'> sandtechth@gmail.com</p>
                     </div>
 
                 </div>

@@ -13,11 +13,11 @@ const socials = [
   },
   {
     icon: <RiInstagramFill />,
-    path: 'https://www.instagram.com/',
+    path: 'https://www.instagram.com/sandtech.eng/profilecard/?igsh=MXhwd2s2NGd0empveQ==',
   },
   {
     icon: <RiLineFill />,
-    path: 'https://line.me/en/',
+    path: 'https://line.me/R/ti/p/@833xzwsc',
   },
 ];
 
