@@ -150,7 +150,13 @@ const Services = () => {
                   {/* text & button */}
                   <div className="flex-1 flex flex-col gap-4">
                     <h3 className="h3 mb-6 text-center md:text-left">{item.title}</h3>
-                    <p className="mb-10 text-center md:text-left">{item.description}</p>
+                    {/* description with proper padding */}
+                    <div className="mb-10 pr-4 xl:pr-[90px]">
+                      <p className="text-left">
+                        {item.description}
+                      </p>
+                    </div>
+
 
                     {/* services list */}
                     <ul className="grid grid-cols-2 gap-4 mb-12">

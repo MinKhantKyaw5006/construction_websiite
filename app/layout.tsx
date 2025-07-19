@@ -17,7 +17,7 @@ const barlow = Barlow({
 
 export const metadata: Metadata = {
   title: "Sandtech Engineering",
-  description: "SandTech Company Website",
+  description: "SandTech Engineering Company Limited",
 };
 
 export default function RootLayout({
